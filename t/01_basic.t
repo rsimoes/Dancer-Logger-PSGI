@@ -3,9 +3,9 @@ use strict;
 use warnings;
 
 plan skip_all => 'LWP::UserAgent is needed to run this test'
-    unless Dancer::ModuleLoader->load('LWP::UserAgent');
+  unless Dancer::ModuleLoader->load('LWP::UserAgent');
 plan skip_all => 'Plack::Middleware::ConsoleLogger is needed to run this test'
-    unless Dancer::ModuleLoader->load('Plack::Middleware::ConsoleLogger');
+  unless Dancer::ModuleLoader->load('Plack::Middleware::ConsoleLogger');
 
 use Plack::Loader;
 use Plack::Builder;
@@ -14,7 +14,7 @@ use Test::TCP;
 Test::TCP::test_tcp(
     client => sub {
         my $port = shift;
-        my $ua = LWP::UserAgent->new;
+        my $ua   = LWP::UserAgent->new;
 
         my $request = HTTP::Request->new(GET => "http://127.0.0.1:$port/");
         my $res = $ua->request($request);
@@ -24,26 +24,25 @@ Test::TCP::test_tcp(
     server => sub {
         my $port = shift;
 
-        use Dancer;
-        use Dancer::Config 'setting';
+        use Dancer ':syntax';
 
         setting apphandler => 'PSGI';
-        setting port => $port;
+        setting port       => $port;
         setting access_log => 0;
-    setting logger => "PSGI";
+        setting logger     => "PSGI";
 
         get '/' => sub {
             warning "this is a warning";
-        return "<html><body>this is a test</body></html>";
+            return "<html><body>this is a test</body></html>";
         };
 
         my $app = sub {
-            my $env = shift;
+            my $env     = shift;
             my $request = Dancer::Request->new($env);
             Dancer->dance($request);
         };
-    $app = builder { enable "ConsoleLogger"; $app };
-    Plack::Loader->auto(port => $port)->run($app);
+        $app = builder { enable "ConsoleLogger"; $app };
+        Plack::Loader->auto(port => $port)->run($app);
     },
 );
 

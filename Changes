@@ -1,4 +1,7 @@
 Revision history for Perl extension Dancer::Logger::PSGI
 
+0.02    Sun 20 Jun 2010 01:26:57 PM CEST  
+        - better log message [Alexis Sukrieh]
+
 0.01    Sat Apr 17 12:38:16 2010
         - original version
