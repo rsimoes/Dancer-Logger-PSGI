@@ -39,9 +39,14 @@ In your application
 
     warning "this is a warning"
 
-In your app.psgi
+Then, in your app.psgi
 
     $app = builder { enable "ConsoleLogger"; $app; }
+
+or in your environment file:
+
+    - plack_middlewares:
+      - ConsoleLogger
 
 With L<Plack::Middleware::ConsoleLogger>, all your log will be send to the javascript console of your browser.
 
