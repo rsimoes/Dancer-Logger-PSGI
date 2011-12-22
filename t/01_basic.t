@@ -38,7 +38,7 @@ Test::TCP::test_tcp(
 
         my $app = sub {
             my $env     = shift;
-            my $request = Dancer::Request->new($env);
+            my $request = Dancer::Request->new(env => $env);
             Dancer->dance($request);
         };
         $app = builder { enable "ConsoleLogger"; $app };
