@@ -8,5 +8,7 @@ MANIFEST
 Makefile.old
 nytprof.out
 MANIFEST.bak
+Dancer-Logger-PSGI*
 *.sw[po]
 t/logs/
+.build
