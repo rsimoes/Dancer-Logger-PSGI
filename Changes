@@ -1,10 +1,11 @@
 Revision history for Perl extension Dancer::Logger::PSGI
 
 {{$NEXT}}
-
-0.020_001 2011-12-22 22:42:39 CST6CDT
         - avoid using Dancer::Request class construction syntax deprecated in
           Dancer version 1.3059 [Alberto Simões, Fayland Lam]
+
+0.03    2011-02-20 10:27:18 CEST
+        - update SYNOPSIS
 
 0.02    2010-06-20 13:26:57 CEST
         - better log message [Alexis Sukrieh]
