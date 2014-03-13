@@ -1,14 +1,15 @@
 package Dancer::Logger::PSGI;
 
+use v5.10;
 use strict;
 use warnings;
 use Dancer::SharedData;
-use base "Dancer::Logger::Abstract";
+use parent qw(Dancer::Logger::Abstract);
 
 # VERSION
 # ABSTRACT: PSGI Log handler for Dancer
 
-sub init {}
+sub init { }
 
 sub _log {
     my ( $self, $level, $message ) = @_;
