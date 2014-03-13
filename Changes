@@ -1,8 +1,12 @@
 Revision history for Perl extension Dancer::Logger::PSGI
 
 {{$NEXT}}
-        - avoid using Dancer::Request class construction syntax deprecated in
-          Dancer version 1.3059 [Alberto Simões, Fayland Lam]
+        - Raised minimum version of Perl to v5.10.
+        - Updated git repository location.
+
+0.04      2011-12-24 00:27:35 America/Chicago
+        - Removed usage of Dancer::Request class construction syntax deprecated
+          in Dancer version 1.3059 [Alberto Simões, Fayland Lam]
 
 0.03    2011-02-20 10:27:18 CEST
         - update SYNOPSIS
