@@ -1,6 +1,8 @@
 Revision history for Perl extension Dancer::Logger::PSGI
 
 {{$NEXT}}
+
+v1.0.1    2014-03-14 13:26:35CDT-0500 America/Chicago
         - Adjusted distribution package to be processed correctly by metacpan.
         - Made licensing information consistent.
         - Removed duplicate tests.
